@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ddy3td35o7nft"]
 
 [ext_resource type="FontFile" uid="uid://ctgc65tkki634" path="res://Assets/Fonts/prstartk.ttf" id="1_ce80c"]
-[ext_resource type="Script" uid="uid://bke8yethksceg" path="res://UI/ui_pausemenu.gd" id="1_nl6pf"]
+[ext_resource type="Script" uid="uid://bke8yethksceg" path="res://UI/ui scripts/ui_pausemenu.gd" id="1_nl6pf"]
 
 [node name="Ui-pausemenu" type="Control"]
 process_mode = 3

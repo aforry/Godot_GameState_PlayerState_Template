@@ -5,17 +5,21 @@ extends Pstate
 
 var direction
 
-#if the jump input is detected in this state, signal a change to jumping state
-func handle_input(event):
-	if Input.is_action_just_pressed("jump"):
-		EventBus.update_player_state.emit(Global.PlayerState.JUMPING)
-	
-func update(delta):
+func enter():
+	#walk animation
+	if sprite.animation != "walk":
+		sprite.play("walk")
+
+func exit():
 	pass
 
-func physics_update(delta):
-	#walk animation
-	sprite.play("walk")
+func handle_input(_event):
+	pass
+	
+func update(_delta):
+	pass
+
+func physics_update(_delta):
 	#get direction based on left or right being pressed
 	direction = Input.get_axis("move_left", "move_right")
 	#ground movement
@@ -28,4 +32,6 @@ func physics_update(delta):
 		EventBus.update_player_state.emit(Global.PlayerState.IDLE)
 	if player.is_on_floor() == false:
 		EventBus.update_player_state.emit(Global.PlayerState.FALLING)
+	if Input.is_action_just_pressed("jump"):
+		EventBus.update_player_state.emit(Global.PlayerState.JUMPING)
 	player.move_and_slide()

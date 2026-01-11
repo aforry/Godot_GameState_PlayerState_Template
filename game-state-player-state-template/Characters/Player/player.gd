@@ -12,6 +12,8 @@ func _ready():
 	#character starts facing right / unflipped
 	flipped = false
 
+#we pass arguments for CharacterBody2D class functions down to the player state machine
+#the player state machine then passes the arguments again to the state node corresponding to the current player state
 func _input(event: InputEvent) -> void:
 	player_state_machine.handlePlayerStateInput(event)
 	

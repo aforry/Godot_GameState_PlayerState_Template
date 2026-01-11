@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://h37wt1rmvicv"]
 
 [ext_resource type="FontFile" uid="uid://ctgc65tkki634" path="res://Assets/Fonts/prstartk.ttf" id="1_ce80c"]
-[ext_resource type="Script" uid="uid://dogoay117636q" path="res://UI/ui_mainmenu.gd" id="1_uvod3"]
-[ext_resource type="Script" uid="uid://dql5oykj0uxau" path="res://UI/font_license.gd" id="3_17fjn"]
+[ext_resource type="Script" uid="uid://dogoay117636q" path="res://UI/ui scripts/ui_mainmenu.gd" id="1_uvod3"]
+[ext_resource type="Script" uid="uid://dql5oykj0uxau" path="res://UI/ui scripts/font_license.gd" id="3_17fjn"]
 
 [node name="Ui-mainmenu" type="Control"]
 layout_mode = 3

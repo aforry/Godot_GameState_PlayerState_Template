@@ -5,11 +5,17 @@ class_name Pstate
 #now we can extend this class name to individual state nodes and extend the functions below
 #we want functions that we will pass delta or events from _process, _physics_process, and _input in the CharacterBody2D node / Player
 
-func update(delta):
+func enter():
+	pass
+	
+func exit():
 	pass
 
-func physics_update(delta):
+func update(_delta):
 	pass
 
-func handle_input(event):
+func physics_update(_delta):
+	pass
+
+func handle_input(_event):
 	pass

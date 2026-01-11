@@ -5,15 +5,21 @@ extends Pstate
 
 var direction
 
-func handle_input(event):
+func enter():
+	#falling animation
+	if sprite.animation != "fall":
+		sprite.play("fall")
+
+func exit():
+	pass
+
+func handle_input(_event):
 	pass
 	
-func update(delta):
+func update(_delta):
 	pass
 
 func physics_update(delta):
-	#falling animation
-	sprite.play("fall")
 	#move y and apply gravity
 	player.velocity.y += Global.GRAVITY * delta
 	#get input

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dbishru8o1eb4"]
 
-[ext_resource type="Script" uid="uid://bvnp3ym1pah7c" path="res://UI/hud_text.gd" id="1_n1lx6"]
+[ext_resource type="Script" uid="uid://bvnp3ym1pah7c" path="res://UI/ui scripts/hud_text.gd" id="1_n1lx6"]
 [ext_resource type="FontFile" uid="uid://ctgc65tkki634" path="res://Assets/Fonts/prstartk.ttf" id="2_wc0eb"]
 
 [node name="Ui-hud" type="Control"]
