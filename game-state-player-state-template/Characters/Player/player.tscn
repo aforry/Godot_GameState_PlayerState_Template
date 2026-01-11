@@ -1,0 +1,72 @@
+[gd_scene load_steps=10 format=3 uid="uid://c1h7moqak5oq3"]
+
+[ext_resource type="Script" uid="uid://c3ptvln6s0jbi" path="res://Characters/Player/player.gd" id="1_8k5s7"]
+[ext_resource type="Texture2D" uid="uid://st666kwcmuw2" path="res://Assets/Sprites/Player/player.png" id="2_7vev3"]
+[ext_resource type="Script" uid="uid://cwj2c8qvf7mg4" path="res://Characters/Player/player_state_machine.gd" id="16_8k5s7"]
+[ext_resource type="Script" uid="uid://d1b56gmok5rhi" path="res://Characters/Player/idle.gd" id="17_5elsd"]
+[ext_resource type="Script" uid="uid://d3rkoyog36gtj" path="res://Characters/Player/walking.gd" id="18_blwrb"]
+[ext_resource type="Script" uid="uid://4wioe80wjwlg" path="res://Characters/Player/jumping.gd" id="19_hvtal"]
+[ext_resource type="Script" uid="uid://bed4w4v35hkmw" path="res://Characters/Player/falling.gd" id="21_jec2i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7h813"]
+size = Vector2(16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m0yi4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7vev3")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7vev3")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7vev3")
+}],
+"loop": false,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7vev3")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_8k5s7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_7h813")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_m0yi4")
+animation = &"walk"
+
+[node name="player_state_machine" type="Node" parent="."]
+script = ExtResource("16_8k5s7")
+
+[node name="idle" type="Node" parent="player_state_machine"]
+script = ExtResource("17_5elsd")
+
+[node name="walking" type="Node" parent="player_state_machine"]
+script = ExtResource("18_blwrb")
+
+[node name="jumping" type="Node" parent="player_state_machine"]
+script = ExtResource("19_hvtal")
+
+[node name="falling" type="Node" parent="player_state_machine"]
+script = ExtResource("21_jec2i")

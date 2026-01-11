@@ -1,0 +1,74 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddy3td35o7nft"]
+
+[ext_resource type="FontFile" uid="uid://ctgc65tkki634" path="res://Assets/Fonts/prstartk.ttf" id="1_ce80c"]
+[ext_resource type="Script" uid="uid://bke8yethksceg" path="res://UI/ui_pausemenu.gd" id="1_nl6pf"]
+
+[node name="Ui-pausemenu" type="Control"]
+process_mode = 3
+z_index = 10
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nl6pf")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG" type="ColorRect" parent="MarginContainer"]
+z_index = -1
+layout_mode = 2
+color = Color(0, 0, 0, 0.19607843)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="pause text" type="RichTextLabel" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("1_ce80c")
+theme_override_fonts/bold_font = ExtResource("1_ce80c")
+theme_override_fonts/bold_italics_font = ExtResource("1_ce80c")
+theme_override_fonts/italics_font = ExtResource("1_ce80c")
+theme_override_fonts/mono_font = ExtResource("1_ce80c")
+bbcode_enabled = true
+text = "[center]PAUSED[/center]
+
+"
+fit_content = true
+scroll_active = false
+
+[node name="Button_resume" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_ce80c")
+text = "Resume Game"
+
+[node name="Button_backtomenu" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_ce80c")
+text = "Back to Menu"
+
+[node name="Button_quitgame" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_ce80c")
+text = "Quit Game
+"
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Button_resume" to="." method="_on_button_resume_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Button_backtomenu" to="." method="_on_button_backtomenu_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Button_quitgame" to="." method="_on_button_quitgame_pressed"]

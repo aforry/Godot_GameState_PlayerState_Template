@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1w1pmce8t253"]
+
+[ext_resource type="Texture2D" uid="uid://c7lic4tk3xrrl" path="res://Assets/Tilesets/floortile.png" id="1_0cgsv"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ao1yf"]
+texture = ExtResource("1_0cgsv")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_x1ndx"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_ao1yf")
+
+[node name="FloorTiles" type="TileMapLayer"]
+tile_set = SubResource("TileSet_x1ndx")

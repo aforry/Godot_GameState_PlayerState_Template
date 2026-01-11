@@ -1,0 +1,23 @@
+[gd_scene load_steps=7 format=3 uid="uid://dvriplwumht4j"]
+
+[ext_resource type="Script" uid="uid://4favg2jp2xeq" path="res://_MAIN/main.gd" id="1_03sfx"]
+[ext_resource type="Script" uid="uid://bc62cy1ciptr1" path="res://_MAIN/scene_manager.gd" id="2_usosw"]
+[ext_resource type="Script" uid="uid://cvwwx4jsdvbtp" path="res://_MAIN/game_state_machine.gd" id="3_rno1c"]
+[ext_resource type="PackedScene" uid="uid://h37wt1rmvicv" path="res://UI/ui_mainmenu.tscn" id="4_xwhgk"]
+[ext_resource type="PackedScene" uid="uid://ddy3td35o7nft" path="res://UI/ui_pausemenu.tscn" id="5_lbyfs"]
+[ext_resource type="PackedScene" uid="uid://dbishru8o1eb4" path="res://UI/ui_hud.tscn" id="6_lbyfs"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_03sfx")
+
+[node name="SceneManager" type="Node" parent="."]
+script = ExtResource("2_usosw")
+
+[node name="GameStateMachine" type="Node" parent="."]
+script = ExtResource("3_rno1c")
+
+[node name="Ui-mainmenu" parent="." instance=ExtResource("4_xwhgk")]
+
+[node name="Ui-pausemenu" parent="." instance=ExtResource("5_lbyfs")]
+
+[node name="Ui-hud" parent="." instance=ExtResource("6_lbyfs")]

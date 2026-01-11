@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbishru8o1eb4"]
+
+[ext_resource type="Script" uid="uid://bvnp3ym1pah7c" path="res://UI/hud_text.gd" id="1_n1lx6"]
+[ext_resource type="FontFile" uid="uid://ctgc65tkki634" path="res://Assets/Fonts/prstartk.ttf" id="2_wc0eb"]
+
+[node name="Ui-hud" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_n1lx6")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("2_wc0eb")
+theme_override_fonts/bold_font = ExtResource("2_wc0eb")
+theme_override_fonts/bold_italics_font = ExtResource("2_wc0eb")
+theme_override_fonts/italics_font = ExtResource("2_wc0eb")
+theme_override_fonts/mono_font = ExtResource("2_wc0eb")
+theme_override_font_sizes/normal_font_size = 8
+theme_override_font_sizes/bold_font_size = 8
+theme_override_font_sizes/bold_italics_font_size = 8
+theme_override_font_sizes/italics_font_size = 8
+theme_override_font_sizes/mono_font_size = 8
+text = "HUD"
