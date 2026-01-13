@@ -26,10 +26,11 @@ enum PlayerState {
 }
 
 #global constants
-const GRAVITY = 400
+const GRAVITY = 980
 const PLAYER_SPEED = 200
 const PLAYER_FRICTION = 10
-const PLAYER_JUMP_FORCE = -200
+const PLAYER_JUMP_HEIGHT = 40
+const PLAYER_JUMP_FORCE = -sqrt(GRAVITY * 2 * PLAYER_JUMP_HEIGHT)
 
 #global variables
 #these will track the current level we are on, and the states we are in

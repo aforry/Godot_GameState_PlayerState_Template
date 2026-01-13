@@ -37,3 +37,4 @@ func getPlayerStateNode():
 		for child in get_children():
 			if child.name == player_state_text && child is Pstate: #only return node if it matches the state name and extends the pstate class
 				return child
+				

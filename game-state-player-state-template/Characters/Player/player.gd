@@ -21,14 +21,16 @@ func _process(delta: float) -> void:
 	player_state_machine.handlePlayerStateProcess(delta)
 
 func _physics_process(delta: float) -> void:
+	orientPlayerXaxis()
+	player_state_machine.handlePlayerStatePhysicsProcess(delta)
+
+func orientPlayerXaxis():
 	#always keep character oriented properly on x-axis when moving
-	#this is in the main player script, because we want this flip accurate regardless of current player state
-	#scaling x to -1 instead of just flipping sprite is better because it will also flip physics/shapes properly
+	#this is on the CharacterBody2D, because we want this flip accurate regardless of player state
+	#scaling x to -1 instead of just flipping the sprite is better because it will also flip physics/shapes properly
 	if velocity.x > 0 && flipped:
 		self.scale.x = -1
 		flipped = false
 	if velocity.x < 0 && !flipped:
 		self.scale.x = -1
 		flipped = true
-	#handles current state each tick, signals handle state changes
-	player_state_machine.handlePlayerStatePhysicsProcess(delta)
